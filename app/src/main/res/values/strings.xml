@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GoncalvesShop</string>
+    <string name="welcome_text">Welcome to the Gonçalves Shop!</string>
 </resources>
