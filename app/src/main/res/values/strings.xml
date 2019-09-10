@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GoncalvesShop</string>
     <string name="welcome_text">Welcome to the Gonçalves Shop!</string>
+    <string name="application_heading">Gonçalves Shop</string>
+    <string name="welcome_description">With a Click of a Button, There Are Numerous Products to Choose From</string>
+    <string name="shopping_button">Begin Shopping</string>
 </resources>
