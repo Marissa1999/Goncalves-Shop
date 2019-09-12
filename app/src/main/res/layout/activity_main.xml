@@ -82,7 +82,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="80dp"
-        android:onClick="launchSecondActivity"
+        android:onClick="launchMenuActivity"
         android:text="@string/shopping_button"
         android:textColor="@android:color/black"
         android:textSize="30sp"

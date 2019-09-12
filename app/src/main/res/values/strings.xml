@@ -4,4 +4,5 @@
     <string name="application_heading">Gonçalves Shop</string>
     <string name="welcome_description">With a Click of a Button, There Are Numerous Products to Choose From</string>
     <string name="shopping_button">Begin Shopping</string>
+    <string name="checkout_button">Proceed to Checkout</string>
 </resources>

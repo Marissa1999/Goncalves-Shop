@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
     }
 
-    public void launchSecondActivity(View view)
+    public void launchMenuActivity(View view)
     {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivityForResult(intent, TEXT_REQUEST);
+        Intent menuIntent = new Intent(this, MenuActivity.class);
+        startActivityForResult(menuIntent, TEXT_REQUEST);
     }
 
 
