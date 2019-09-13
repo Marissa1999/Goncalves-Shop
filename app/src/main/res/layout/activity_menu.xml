@@ -25,6 +25,22 @@
                 android:layout_height="135dp"
                 app:cardBackgroundColor="@color/colorPrimary">
 
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/adding_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:srcCompat="@drawable/adding_button" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/minus_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:srcCompat="@drawable/minus_button" />
+
                 <ImageView
                     android:id="@+id/album_cover_1"
                     android:layout_width="129dp"
@@ -35,17 +51,17 @@
 
                 <TextView
                     android:id="@+id/album_quantity"
-                    android:layout_width="401dp"
-                    android:layout_height="96dp"
+                    android:layout_width="219dp"
+                    android:layout_height="119dp"
                     android:gravity="bottom|right"
-                    android:text="TextView"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/album_description_1"
                     android:layout_width="401dp"
-                    android:layout_height="64dp"
+                    android:layout_height="59dp"
                     android:gravity="bottom|center|right"
                     android:textColor="@android:color/white"
                     android:textSize="15sp"
@@ -53,8 +69,8 @@
 
                 <TextView
                     android:id="@+id/album_price_1"
-                    android:layout_width="399dp"
-                    android:layout_height="125dp"
+                    android:layout_width="401dp"
+                    android:layout_height="90dp"
                     android:gravity="bottom|right"
                     android:text="$14.99"
                     android:textColor="@android:color/white"
@@ -67,7 +83,7 @@
                     android:gravity="right"
                     android:text="Journey - Escape"
                     android:textColor="@android:color/white"
-                    android:textSize="30sp"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
 
             </android.support.v7.widget.CardView>
