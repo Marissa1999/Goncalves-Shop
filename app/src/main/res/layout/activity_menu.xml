@@ -22,24 +22,53 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="135dp"
                 app:cardBackgroundColor="@color/colorPrimary">
 
                 <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/album_cover_1"
+                    android:layout_width="129dp"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:scaleType="centerInside"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    app:srcCompat="@drawable/journey_escape" />
 
                 <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="408dp"
-                    android:layout_height="59dp"
-                    android:gravity="center"
+                    android:id="@+id/album_quantity"
+                    android:layout_width="401dp"
+                    android:layout_height="96dp"
+                    android:gravity="bottom|right"
                     android:text="TextView"
-                    android:textColor="@android:color/black"
-                    android:textSize="30sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/album_description_1"
+                    android:layout_width="401dp"
+                    android:layout_height="64dp"
+                    android:gravity="bottom|center|right"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    tools:text="One of the definitive '80s rock albums." />
+
+                <TextView
+                    android:id="@+id/album_price_1"
+                    android:layout_width="399dp"
+                    android:layout_height="125dp"
+                    android:gravity="bottom|right"
+                    android:text="$14.99"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/album_title_1"
+                    android:layout_width="399dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Journey - Escape"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
             </android.support.v7.widget.CardView>
 
