@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
     public void launchMenuActivity(View view)
     {
         Intent menuIntent = new Intent(this, MenuActivity.class);
-        startActivityForResult(menuIntent, TEXT_REQUEST);
+        startActivityForResult(menuIntent, this.TEXT_REQUEST);
     }
 
 
