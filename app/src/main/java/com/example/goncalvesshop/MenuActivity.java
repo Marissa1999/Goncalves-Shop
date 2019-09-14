@@ -2,118 +2,95 @@ package com.example.goncalvesshop;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.Serializable;
 
 public class MenuActivity extends AppCompatActivity {
 
+
+    private static final String LOG_TAG = MenuActivity.class.getSimpleName();
     public static final int TEXT_REQUEST = 1;
-    private int quantity = 0;
-    private double subtotal = 0.0;
-
-
-    private TextView idPrice = findViewById(R.id.album_price);
-    private String printedPrice = idPrice.getText().toString();
-    private double price = Double.parseDouble(printedPrice);
-
-
-    private TextView showAddedQuantity;
-    private TextView showSubtractedQuantity;
-    private TextView showAddedSubtotal;
-    private TextView showSubtractedSubtotal;
+    public static final String EXTRA_CART = "com.example.goncalvesshop.extra.CART";
+    private ShoppingCart cart;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        this.showAddedQuantity = findViewById(R.id.album_quantity);
-        this.showSubtractedQuantity = findViewById(R.id.album_quantity);
-        this.showAddedSubtotal = findViewById(R.id.album_subtotal);
-        this.showSubtractedSubtotal = findViewById(R.id.album_subtotal);
+        cart = new ShoppingCart();
     }
 
 
-    public void launchCheckoutActivity(View view) {
+    public void modifyAlbumQuantity(View view) {
+
+        ViewGroup item = (ViewGroup) view.getParent();
+        TextView albumQuantity = item.findViewById(R.id.album_quantity);
+        TextView albumPrice = item.findViewById(R.id.album_price);
+        TextView albumSubtotal = item.findViewById(R.id.album_subtotal);
+        TextView albumTitle = item.findViewById(R.id.album_title);
+        TextView albumDescription = item.findViewById(R.id.album_description);
+        TextView addingButton = item.findViewById(R.id.adding_button);
+        TextView minusButton = item.findViewById(R.id.minus_button);
+
+        String stringAlbumQuantity = albumQuantity.getText().toString();
+        int integerAlbumQuantity = Integer.parseInt(stringAlbumQuantity);
+
+        if (view.getId() == addingButton.getId())
+        {
+            integerAlbumQuantity++;
+            showAlbumQuantity(integerAlbumQuantity, albumQuantity);
+            showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
+        }
+
+        else if (view.getId() == minusButton.getId())
+        {
+
+            integerAlbumQuantity--;
+            showAlbumQuantity(integerAlbumQuantity, albumQuantity);
+            showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
+
+            String initialStringAlbumPrice = albumPrice.getText().toString();
+            String stringAlbumPrice = initialStringAlbumPrice.substring(1);
+            double integerAlbumPrice = Double.parseDouble(stringAlbumPrice);
+
+            cart.addAlbum(albumTitle.getText().toString(), albumDescription.getText().toString(), integerAlbumPrice, integerAlbumQuantity);
+
+            Toast.makeText(this, cart.getAlbumString(0), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void showAlbumSubtotal(int integerAlbumQuantity, TextView albumPrice, TextView albumSubtotal)
+    {
+        String initialStringAlbumPrice = albumPrice.getText().toString();
+        String stringAlbumPrice = initialStringAlbumPrice.substring(1);
+        double newAlbumPrice = Double.parseDouble(stringAlbumPrice);
+        double newAlbumSubtotal = newAlbumPrice * integerAlbumQuantity;
+        albumSubtotal.setText("$" + newAlbumSubtotal);
+    }
+
+    private void showAlbumQuantity(int integerAlbumQuantity, TextView albumQuantity)
+    {
+        String convertedAlbumQuantity = Integer.toString(integerAlbumQuantity);
+        albumQuantity.setText(convertedAlbumQuantity);
+    }
+
+
+    public void launchCheckoutActivity(View view)
+    {
         Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
-        checkoutIntent.putExtra("Total Amount Before Taxes: ", String.valueOf(this.price));
+        checkoutIntent.putExtra(EXTRA_CART, String.valueOf(cart));
         startActivityForResult(checkoutIntent, TEXT_REQUEST);
     }
 
-
-    public void addQuantity(View view)
-    {
-        this.quantity++;
-
-        if (this.quantity < 0)
-        {
-            this.quantity = 0;
-        }
-
-        if (this.showAddedQuantity != null)
-            this.showAddedQuantity.setText(Integer.toString(this.quantity));
-
-    }
-
-
-
-
-    public void subtractQuantity(View view)
-    {
-        this.quantity--;
-
-        if (this.quantity < 0)
-        {
-            this.quantity = 0;
-        }
-
-        if (this.showSubtractedQuantity != null)
-            this.showSubtractedQuantity.setText(Integer.toString(this.quantity));
-
-    }
-
-
-
-    public void addSubtotal(View view)
-    {
-
-        this.subtotal += this.quantity * this.price;
-
-        if (this.subtotal < 0.0)
-        {
-            this.subtotal = 0.0;
-        }
-
-        if (this.showAddedSubtotal != null)
-            this.showAddedSubtotal.setText(Double.toString(this.subtotal));
-
-    }
-
-
-    public void subtractSubtotal(View view)
-    {
-
-        this.subtotal -= this.quantity * this.price;
-
-        if (this.subtotal < 0.0)
-        {
-            this.subtotal = 0.0;
-        }
-
-        if (this.showSubtractedSubtotal != null)
-            this.showSubtractedSubtotal.setText(Double.toString(this.subtotal));
-
-    }
-
-
-    public void finalSubtotal(View view)
-    {
-
-
-
-
-    }
-
 }
+
+
