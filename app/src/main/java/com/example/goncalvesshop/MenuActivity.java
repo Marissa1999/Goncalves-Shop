@@ -1,8 +1,6 @@
 package com.example.goncalvesshop;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -52,7 +49,6 @@ public class MenuActivity extends AppCompatActivity {
 
         else if (view.getId() == minusButton.getId())
         {
-
             integerAlbumQuantity--;
             showAlbumQuantity(integerAlbumQuantity, albumQuantity);
             showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
@@ -74,7 +70,7 @@ public class MenuActivity extends AppCompatActivity {
         String stringAlbumPrice = initialStringAlbumPrice.substring(1);
         double newAlbumPrice = Double.parseDouble(stringAlbumPrice);
         double newAlbumSubtotal = newAlbumPrice * integerAlbumQuantity;
-        albumSubtotal.setText("$" + newAlbumSubtotal);
+        albumSubtotal.setText(String.format("$%s", newAlbumSubtotal));
     }
 
     private void showAlbumQuantity(int integerAlbumQuantity, TextView albumQuantity)
@@ -87,7 +83,7 @@ public class MenuActivity extends AppCompatActivity {
     public void launchCheckoutActivity(View view)
     {
         Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
-        checkoutIntent.putExtra(EXTRA_CART, String.valueOf(cart));
+        checkoutIntent.putExtra(EXTRA_CART, (String.valueOf(cart)));
         startActivityForResult(checkoutIntent, TEXT_REQUEST);
     }
 
