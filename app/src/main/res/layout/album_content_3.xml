@@ -48,7 +48,7 @@
         android:layout_marginLeft="140dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/minus_button_3"
-        android:onClick="subtractAlbumQuantity1"
+        android:onClick="subtractAlbumQuantity3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -77,7 +77,7 @@
         android:layout_marginRight="148dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/adding_button_3"
-        android:onClick="addAlbumQuantity1"
+        android:onClick="addAlbumQuantity3"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

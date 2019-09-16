@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 
@@ -13,9 +12,10 @@ public class MenuActivity extends AppCompatActivity {
 
 
     private static final String LOG_TAG = MenuActivity.class.getSimpleName();
+    public static final String EXTRA_MESSAGE = "com.example.android.goncalvesshop.extra.MESSAGE";
     public static final int TEXT_REQUEST = 1;
     private int quantity = 0;
-
+    private double finalSubtotal = 0.00;
 
     private TextView showAddedAlbumQuantity_1;
     private TextView showAddedAlbumQuantity_2;
@@ -41,12 +41,17 @@ public class MenuActivity extends AppCompatActivity {
     private TextView showSubtractedAlbumQuantity_10;
 
 
-    private TextView albumSubtotal_1 = findViewById(R.id.album_subtotal_1);
-    private TextView albumSubtotal_2 = findViewById(R.id.album_subtotal_2);
-    private TextView albumSubtotal_3 = findViewById(R.id.album_subtotal_3);
-    private TextView albumSubtotal_4 = findViewById(R.id.album_subtotal_4);
-    private TextView albumSubtotal_5 = findViewById(R.id.album_subtotal_5);
-    private TextView albumSubtotal_6 = findViewById(R.id.album_subtotal_6);
+    private TextView showAlbumSubtotal_1;
+    private TextView showAlbumSubtotal_2;
+    private TextView showAlbumSubtotal_3;
+    private TextView showAlbumSubtotal_4;
+    private TextView showAlbumSubtotal_5;
+    private TextView showAlbumSubtotal_6;
+    private TextView showAlbumSubtotal_7;
+    private TextView showAlbumSubtotal_8;
+    private TextView showAlbumSubtotal_9;
+    private TextView showAlbumSubtotal_10;
+
 
 
 
@@ -56,8 +61,37 @@ public class MenuActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         this.showAddedAlbumQuantity_1 = findViewById(R.id.album_quantity_1);
         this.showSubtractedAlbumQuantity_1 = findViewById(R.id.album_quantity_1);
+        this.showAlbumSubtotal_1 = findViewById(R.id.album_subtotal_1);
+
+        this.showAddedAlbumQuantity_2 = findViewById(R.id.album_quantity_2);
+        this.showSubtractedAlbumQuantity_2 = findViewById(R.id.album_quantity_2);
+
+        this.showAddedAlbumQuantity_3 = findViewById(R.id.album_quantity_3);
+        this.showSubtractedAlbumQuantity_3 = findViewById(R.id.album_quantity_3);
+
+        this.showAddedAlbumQuantity_4 = findViewById(R.id.album_quantity_4);
+        this.showSubtractedAlbumQuantity_4 = findViewById(R.id.album_quantity_4);
+
+        this.showAddedAlbumQuantity_5 = findViewById(R.id.album_quantity_5);
+        this.showSubtractedAlbumQuantity_5 = findViewById(R.id.album_quantity_5);
+
+        this.showAddedAlbumQuantity_6 = findViewById(R.id.album_quantity_6);
+        this.showSubtractedAlbumQuantity_6 = findViewById(R.id.album_quantity_6);
+
+        this.showAddedAlbumQuantity_7 = findViewById(R.id.album_quantity_7);
+        this.showSubtractedAlbumQuantity_7 = findViewById(R.id.album_quantity_7);
+
+        this.showAddedAlbumQuantity_8 = findViewById(R.id.album_quantity_8);
+        this.showSubtractedAlbumQuantity_8 = findViewById(R.id.album_quantity_8);
+
+        this.showAddedAlbumQuantity_9 = findViewById(R.id.album_quantity_9);
+        this.showSubtractedAlbumQuantity_9= findViewById(R.id.album_quantity_9);
+
+        this.showAddedAlbumQuantity_10 = findViewById(R.id.album_quantity_10);
+        this.showSubtractedAlbumQuantity_10 = findViewById(R.id.album_quantity_10);
 
     }
 
@@ -77,6 +111,9 @@ public class MenuActivity extends AppCompatActivity {
         if (showAddedAlbumQuantity_1 != null)
             showAddedAlbumQuantity_1.setText(Integer.toString(this.quantity));
 
+
+        showAlbumSubtotal_1(this.quantity);
+
     }
 
 
@@ -95,15 +132,50 @@ public class MenuActivity extends AppCompatActivity {
         if (showSubtractedAlbumQuantity_1 != null)
             showSubtractedAlbumQuantity_1.setText(Integer.toString(this.quantity));
 
+        showAlbumSubtotal_1(this.quantity);
+
     }
 
 
 
-
-
-/*
-    public void subtractQuantity(View view)
+    @SuppressLint("SetTextI18n")
+    public void showAlbumSubtotal_1(int quantity)
     {
+
+        TextView idPrice_1 = findViewById(R.id.album_price_1);
+        String printedPrice_1 = idPrice_1.getText().toString().substring(1);
+        double albumPrice_1 = Double.parseDouble(printedPrice_1);
+        double albumSubtotal_1 = albumPrice_1 * quantity;
+
+        if (showAlbumSubtotal_1 != null)
+        showAlbumSubtotal_1.setText("$" + albumSubtotal_1);
+        this.finalSubtotal += albumSubtotal_1;
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity2(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_2 != null)
+            showAddedAlbumQuantity_2.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity2(View view)
+    {
+
         this.quantity--;
 
         if (this.quantity < 0)
@@ -111,48 +183,304 @@ public class MenuActivity extends AppCompatActivity {
             this.quantity = 0;
         }
 
-        if (this.showSubtractedQuantity != null)
-            this.showSubtractedQuantity.setText(Integer.toString(this.quantity));
+        if (showSubtractedAlbumQuantity_2 != null)
+            showSubtractedAlbumQuantity_2.setText(Integer.toString(this.quantity));
 
     }
 
 
-
-    public void addSubtotal(View view)
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity3(View view)
     {
 
-        this.subtotal += this.quantity * this.price;
+        this.quantity++;
 
-        if (this.subtotal < 0)
+        if (this.quantity < 0)
         {
-            this.subtotal = 0;
+            this.quantity = 0;
         }
 
-        if (this.showAddedSubtotal != null)
-            this.showAddedSubtotal.setText(Double.toString(this.subtotal));
+        if (showAddedAlbumQuantity_3 != null)
+            showAddedAlbumQuantity_3.setText(Integer.toString(this.quantity));
 
     }
 
 
-    public void subtractSubtotal(View view)
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity3(View view)
     {
 
-        this.subtotal -= this.quantity * this.price;
+        this.quantity--;
 
-        if (this.subtotal < 0)
+        if (this.quantity < 0)
         {
-            this.subtotal = 0;
+            this.quantity = 0;
         }
 
-        if (this.showSubtractedSubtotal != null)
-            this.showSubtractedSubtotal.setText(Double.toString(this.subtotal));
+        if (showSubtractedAlbumQuantity_3 != null)
+            showSubtractedAlbumQuantity_3.setText(Integer.toString(this.quantity));
 
     }
 
 
-}
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity4(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_4 != null)
+            showAddedAlbumQuantity_4.setText(Integer.toString(this.quantity));
+
+    }
 
 
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity4(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_4 != null)
+            showSubtractedAlbumQuantity_4.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity5(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_5 != null)
+            showAddedAlbumQuantity_5.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity5(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_5 != null)
+            showSubtractedAlbumQuantity_5.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity6(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_6 != null)
+            showAddedAlbumQuantity_6.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity6(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_6 != null)
+            showSubtractedAlbumQuantity_6.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity7(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_7 != null)
+            showAddedAlbumQuantity_7.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity7(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_7 != null)
+            showSubtractedAlbumQuantity_7.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity8(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_8 != null)
+            showAddedAlbumQuantity_8.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity8(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_8 != null)
+            showSubtractedAlbumQuantity_8.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity9(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_9 != null)
+            showAddedAlbumQuantity_9.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity9(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_9 != null)
+            showSubtractedAlbumQuantity_9.setText(Integer.toString(this.quantity));
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void addAlbumQuantity10(View view)
+    {
+
+        this.quantity++;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showAddedAlbumQuantity_10 != null)
+            showAddedAlbumQuantity_10.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void subtractAlbumQuantity10(View view)
+    {
+
+        this.quantity--;
+
+        if (this.quantity < 0)
+        {
+            this.quantity = 0;
+        }
+
+        if (showSubtractedAlbumQuantity_10 != null)
+            showSubtractedAlbumQuantity_10.setText(Integer.toString(this.quantity));
+
+    }
+
+
+
+
+    private void showAlbumSubtotal(int integerAlbumQuantity, TextView albumPrice, TextView albumSubtotal)
+    {
+        String initialStringAlbumPrice = albumPrice.getText().toString();
+        String stringAlbumPrice = initialStringAlbumPrice.substring(1);
+        double newAlbumPrice = Double.parseDouble(stringAlbumPrice);
+        double newAlbumSubtotal = newAlbumPrice * integerAlbumQuantity;
+        albumSubtotal.setText(String.format("$%s", newAlbumSubtotal));
+    }
+
+
+
+
+
+
+
+/*
     public void modifyAlbumQuantity(View view)
     {
 
@@ -188,14 +516,6 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    private void showAlbumSubtotal(int integerAlbumQuantity, TextView albumPrice, TextView albumSubtotal)
-    {
-        String initialStringAlbumPrice = albumPrice.getText().toString();
-        String stringAlbumPrice = initialStringAlbumPrice.substring(1);
-        double newAlbumPrice = Double.parseDouble(stringAlbumPrice);
-        double newAlbumSubtotal = newAlbumPrice * integerAlbumQuantity;
-        albumSubtotal.setText(String.format("$%s", newAlbumSubtotal));
-    }
 
 
 
@@ -205,6 +525,7 @@ public class MenuActivity extends AppCompatActivity {
     public void launchCheckoutActivity(View view)
     {
         Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
+        checkoutIntent.putExtra(EXTRA_MESSAGE, "$" + this.finalSubtotal);
         startActivityForResult(checkoutIntent, TEXT_REQUEST);
     }
 
