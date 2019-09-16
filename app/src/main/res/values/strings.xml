@@ -15,5 +15,9 @@
     <string name="tps_total_title">TPS Total:</string>
     <string name="tvq_total_title">TVQ Total:</string>
     <string name="final_total_title">Final Total:</string>
-    <string name="thanking_text">Thank You for Shopping! Come Back Again!</string>
+    <string name="thanking_text">Thank You for Shopping!</string>
+    <string name="subtotal_number">TextView</string>
+    <string name="tps_total_number">TextView</string>
+    <string name="tvq_total_number">TextView</string>
+    <string name="final_total_number">TextView</string>
 </resources>
