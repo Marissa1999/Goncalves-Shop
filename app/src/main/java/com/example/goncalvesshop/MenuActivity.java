@@ -13,7 +13,6 @@ public class MenuActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MenuActivity.class.getSimpleName();
     public static final int TEXT_REQUEST = 1;
-    protected double finalAlbumSubtotal;
 
 
     @Override
@@ -32,7 +31,6 @@ public class MenuActivity extends AppCompatActivity {
         TextView albumSubtotal = item.findViewById(R.id.album_subtotal);
         TextView addingButton = item.findViewById(R.id.adding_button);
         TextView minusButton = item.findViewById(R.id.minus_button);
-        TextView albumTotalSubtotal = item.findViewById(R.id.album_total_subtotal);
 
 
         String stringAlbumQuantity = albumQuantity.getText().toString();
@@ -42,6 +40,12 @@ public class MenuActivity extends AppCompatActivity {
         if (view.getId() == addingButton.getId())
         {
             integerAlbumQuantity++;
+
+            if (integerAlbumQuantity < 0)
+            {
+                integerAlbumQuantity = 0;
+            }
+
             showAlbumQuantity(integerAlbumQuantity, albumQuantity);
             showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
             //showFinalSubtotal(albumSubtotal, albumTotalSubtotal);
@@ -50,6 +54,12 @@ public class MenuActivity extends AppCompatActivity {
         else if (view.getId() == minusButton.getId())
         {
             integerAlbumQuantity--;
+
+            if (integerAlbumQuantity < 0)
+            {
+                integerAlbumQuantity = 0;
+            }
+
             showAlbumQuantity(integerAlbumQuantity, albumQuantity);
             showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
             //showFinalSubtotal(albumSubtotal, albumTotalSubtotal);
@@ -74,8 +84,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    private void showFinalSubtotal(TextView albumSubtotal, TextView albumTotalSubtotal)
+    private void showFinalSubtotal(TextView albumSubtotal, TextView albumTotalSubtotal, ViewGroup view)
     {
+
         String initialStringAlbumSubtotal = albumSubtotal.getText().toString();
         String stringAlbumSubtotal = initialStringAlbumSubtotal.substring(1);
         double newAlbumSubtotal = Double.parseDouble(stringAlbumSubtotal);
@@ -91,7 +102,6 @@ public class MenuActivity extends AppCompatActivity {
     public void launchCheckoutActivity(View view)
     {
         Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
-        checkoutIntent.putExtra("Subtotal", this.finalAlbumSubtotal);
         startActivityForResult(checkoutIntent, TEXT_REQUEST);
     }
 
