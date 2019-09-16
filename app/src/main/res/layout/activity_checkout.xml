@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/welcome_background"
+    android:id="@+id/total_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentStart="true"
@@ -43,10 +43,9 @@
         android:id="@+id/subtotal_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="52dp"
         android:text="@string/subtotal_number"
+        android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/subtotal_title"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,10 +77,9 @@
         android:id="@+id/tps_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
+        android:layout_marginTop="44dp"
         android:text="@string/tps_total_number"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtotal_number" />
 
@@ -113,10 +111,9 @@
         android:id="@+id/tvq_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginTop="52dp"
         android:text="@string/tvq_total_number"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tps_total_number" />
 
@@ -148,10 +145,11 @@
         android:id="@+id/final_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="@string/final_total_number"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvq_total_number" />
 
