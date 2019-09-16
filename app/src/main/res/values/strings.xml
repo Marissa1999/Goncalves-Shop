@@ -5,10 +5,15 @@
     <string name="welcome_description">With a Click of a Button, There Are Numerous Products to Choose From</string>
     <string name="shopping_button">Begin Shopping</string>
     <string name="checkout_button">Proceed to Checkout</string>
-    <string name="album_subtotal">0.00</string>
-    <string name="album_price">14.99</string>
+    <string name="album_subtotal">$0.00</string>
+    <string name="album_price">$14.99</string>
     <string name="album_quantity">0</string>
     <string name="album_description">One of the definitive \'80s rock albums.</string>
     <string name="album_title">Journey - Escape</string>
     <string name="album_cover">album_cover</string>
+    <string name="subtotal_title">Subtotal:</string>
+    <string name="tps_total_title">TPS Total:</string>
+    <string name="tvq_total_title">TVQ Total:</string>
+    <string name="final_total_title">Final Total:</string>
+    <string name="thanking_text">Thank You for Shopping! Come Back Again!</string>
 </resources>
