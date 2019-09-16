@@ -13,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MenuActivity.class.getSimpleName();
     public static final int TEXT_REQUEST = 1;
-    private double finalAlbumSubtotal;
+    protected double finalAlbumSubtotal;
 
 
     @Override
@@ -32,6 +32,7 @@ public class MenuActivity extends AppCompatActivity {
         TextView albumSubtotal = item.findViewById(R.id.album_subtotal);
         TextView addingButton = item.findViewById(R.id.adding_button);
         TextView minusButton = item.findViewById(R.id.minus_button);
+        TextView albumTotalSubtotal = item.findViewById(R.id.album_total_subtotal);
 
 
         String stringAlbumQuantity = albumQuantity.getText().toString();
@@ -43,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
             integerAlbumQuantity++;
             showAlbumQuantity(integerAlbumQuantity, albumQuantity);
             showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
-            addFinalSubtotal(albumSubtotal);
+            //showFinalSubtotal(albumSubtotal, albumTotalSubtotal);
         }
 
         else if (view.getId() == minusButton.getId())
@@ -51,6 +52,7 @@ public class MenuActivity extends AppCompatActivity {
             integerAlbumQuantity--;
             showAlbumQuantity(integerAlbumQuantity, albumQuantity);
             showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal);
+            //showFinalSubtotal(albumSubtotal, albumTotalSubtotal);
         }
 
     }
@@ -72,13 +74,17 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    private void addFinalSubtotal(TextView albumSubtotal)
+    private void showFinalSubtotal(TextView albumSubtotal, TextView albumTotalSubtotal)
     {
         String initialStringAlbumSubtotal = albumSubtotal.getText().toString();
         String stringAlbumSubtotal = initialStringAlbumSubtotal.substring(1);
         double newAlbumSubtotal = Double.parseDouble(stringAlbumSubtotal);
-        this.finalAlbumSubtotal += newAlbumSubtotal;
-        albumSubtotal.setText(String.format("$%s", newAlbumSubtotal));
+
+        String initialStringAlbumTotalSubtotal = albumTotalSubtotal.getText().toString();
+        String stringAlbumTotalSubtotal = initialStringAlbumTotalSubtotal.substring(1);
+        double newAlbumTotalSubtotal = Double.parseDouble(stringAlbumTotalSubtotal);
+        newAlbumTotalSubtotal += newAlbumSubtotal;
+        albumTotalSubtotal.setText(String.format("$%s", newAlbumTotalSubtotal));
     }
 
 

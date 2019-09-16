@@ -20,4 +20,5 @@
     <string name="tps_total_number">TextView</string>
     <string name="tvq_total_number">TextView</string>
     <string name="final_total_number">TextView</string>
+    <string name="album_total_subtotal">$0.00</string>
 </resources>
