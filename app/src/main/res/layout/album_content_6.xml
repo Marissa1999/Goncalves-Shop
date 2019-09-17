@@ -132,11 +132,11 @@
         android:layout_width="127dp"
         android:layout_height="131dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/album_cover_6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/u2_joshua_tree"
-        android:contentDescription="@string/album_cover_6" />
+        app:srcCompat="@drawable/u2_joshua_tree" />
 
 </android.support.constraint.ConstraintLayout>
