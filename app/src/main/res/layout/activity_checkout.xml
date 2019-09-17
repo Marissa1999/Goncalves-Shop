@@ -43,8 +43,8 @@
         android:id="@+id/subtotal_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="52dp"
         android:text="@string/subtotal_number"
         android:textColor="@android:color/white"
@@ -80,10 +80,13 @@
         android:id="@+id/tps_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="44dp"
         android:text="@string/tps_total_number"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/tps_total_title"
         app:layout_constraintTop_toBottomOf="@+id/subtotal_number" />
 
     <TextView
@@ -114,12 +117,13 @@
         android:id="@+id/tvq_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="44dp"
         android:text="@string/tvq_total_number"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/tvq_total_title"
         app:layout_constraintTop_toBottomOf="@+id/tps_total_number" />
 
     <TextView
@@ -150,12 +154,13 @@
         android:id="@+id/final_total_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="52dp"
         android:text="@string/final_total_number"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/final_total_title"
         app:layout_constraintTop_toBottomOf="@+id/tvq_total_number" />
 
     <TextView

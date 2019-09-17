@@ -12,9 +12,15 @@ public class MenuActivity extends AppCompatActivity {
 
 
     private static final String LOG_TAG = MenuActivity.class.getSimpleName();
-    public static final String TOTAL_SUBTOTAL = "com.example.android.goncalvesshop.extra.MESSAGE";
+    public static final String FINAL_SUBTOTAL = "com.example.android.goncalvesshop.extra.MESSAGE";
+    public static final String TPS_TAX = "com.example.android.goncalvesshop.tps.TAX";
+    public static final String TVQ_TAX = "com.example.android.goncalvesshop.tvq.TAX";
+    public static final String FINAL_TOTAL = "com.example.android.goncalvesshop.final.TOTAL";
     public static final int TEXT_REQUEST = 1;
     private double finalSubtotal = 0.00;
+    private double totalTPSTax = 0.00;
+    private double totalTVQTax = 0.00;
+    private double finalTotal = 0.00;
 
     private TextView showAddedAlbumQuantity_1;
     private TextView showAddedAlbumQuantity_2;
@@ -27,16 +33,16 @@ public class MenuActivity extends AppCompatActivity {
     private TextView showAddedAlbumQuantity_9;
     private TextView showAddedAlbumQuantity_10;
 
-    private TextView albumPrice_1 = findViewById(R.id.album_price_1);
-    private TextView albumPrice_2 = findViewById(R.id.album_price_2);
-    private TextView albumPrice_3 = findViewById(R.id.album_price_3);
-    private TextView albumPrice_4 = findViewById(R.id.album_price_4);
-    private TextView albumPrice_5 = findViewById(R.id.album_price_5);
-    private TextView albumPrice_6 = findViewById(R.id.album_price_6);
-    private TextView albumPrice_7 = findViewById(R.id.album_price_7);
-    private TextView albumPrice_8 = findViewById(R.id.album_price_8);
-    private TextView albumPrice_9 = findViewById(R.id.album_price_9);
-    private TextView albumPrice_10 = findViewById(R.id.album_price_10);
+    private TextView albumPrice_1;
+    private TextView albumPrice_2;
+    private TextView albumPrice_3;
+    private TextView albumPrice_4;
+    private TextView albumPrice_5;
+    private TextView albumPrice_6;
+    private TextView albumPrice_7;
+    private TextView albumPrice_8;
+    private TextView albumPrice_9;
+    private TextView albumPrice_10;
 
     private TextView showSubtractedAlbumQuantity_1;
     private TextView showSubtractedAlbumQuantity_2;
@@ -125,7 +131,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void showAlbumSubtotal(int albumQuantity, TextView idAlbumPrice, TextView albumSubtotal)
     {
 
@@ -135,19 +141,36 @@ public class MenuActivity extends AppCompatActivity {
 
         if (albumSubtotal != null)
         {
-            albumSubtotal.setText("$" + convertedAlbumSubtotal);
+            albumSubtotal.setText(String.format("$%.2f", convertedAlbumSubtotal));
         }
 
-        addAlbumTotalSubtotal(convertedAlbumSubtotal);
+        calculateAlbumFinalSubtotal(convertedAlbumSubtotal);
+        calculateAlbumFinalTotalTaxes();
+        calculateAlbumFinalTotal();
     }
 
 
 
 
-    public void addAlbumTotalSubtotal(double albumSubtotal)
+    public void calculateAlbumFinalSubtotal(double albumSubtotal)
     {
         this.finalSubtotal += albumSubtotal;
     }
+
+
+
+    public void calculateAlbumFinalTotalTaxes()
+    {
+        this.totalTPSTax = this.finalSubtotal * 0.05;
+        this.totalTVQTax = this.finalSubtotal * 0.0975;
+    }
+
+
+    public void calculateAlbumFinalTotal()
+    {
+        this.finalTotal = this.finalSubtotal + this.totalTPSTax + this.totalTVQTax;
+    }
+
 
 
 
@@ -155,6 +178,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity1(View view)
     {
+
+            this.albumPrice_1 = findViewById(R.id.album_price_1);
 
             this.albumQuantity_1++;
 
@@ -175,6 +200,8 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity1(View view)
     {
 
+            this.albumPrice_1 = findViewById(R.id.album_price_1);
+
             this.albumQuantity_1--;
 
             if (this.albumQuantity_1 < 0)
@@ -193,6 +220,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity2(View view)
     {
+
+        this.albumPrice_2 = findViewById(R.id.album_price_2);
 
         this.albumQuantity_2++;
 
@@ -214,6 +243,8 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity2(View view)
     {
 
+        this.albumPrice_2 = findViewById(R.id.album_price_2);
+
         this.albumQuantity_2--;
 
         if (this.albumQuantity_2 < 0)
@@ -232,6 +263,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity3(View view)
     {
+
+        this.albumPrice_3 = findViewById(R.id.album_price_3);
 
         this.albumQuantity_3++;
 
@@ -252,6 +285,7 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity3(View view)
     {
+        this.albumPrice_3 = findViewById(R.id.album_price_3);
 
         this.albumQuantity_3--;
 
@@ -271,6 +305,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity4(View view)
     {
+
+        this.albumPrice_4 = findViewById(R.id.album_price_4);
 
         this.albumQuantity_4++;
 
@@ -292,6 +328,8 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity4(View view)
     {
 
+        this.albumPrice_4 = findViewById(R.id.album_price_4);
+
         this.albumQuantity_4--;
 
         if (this.albumQuantity_4 < 0)
@@ -309,6 +347,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity5(View view)
     {
+
+        this.albumPrice_5 = findViewById(R.id.album_price_5);
 
         this.albumQuantity_5++;
 
@@ -330,6 +370,8 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity5(View view)
     {
 
+        this.albumPrice_5 = findViewById(R.id.album_price_5);
+
         this.albumQuantity_5--;
 
         if (this.albumQuantity_5 < 0)
@@ -347,6 +389,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity6(View view)
     {
+
+        this.albumPrice_6 = findViewById(R.id.album_price_6);
 
         this.albumQuantity_6++;
 
@@ -368,6 +412,8 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity6(View view)
     {
 
+        this.albumPrice_6 = findViewById(R.id.album_price_6);
+
         this.albumQuantity_6--;
 
         if (this.albumQuantity_6 < 0)
@@ -385,6 +431,8 @@ public class MenuActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity7(View view)
     {
+
+        this.albumPrice_7 = findViewById(R.id.album_price_7);
 
         this.albumQuantity_7++;
 
@@ -406,31 +454,41 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity7(View view)
     {
 
-        this.quantity--;
+        this.albumPrice_7 = findViewById(R.id.album_price_7);
 
-        if (this.quantity < 0)
+        this.albumQuantity_7--;
+
+        if (this.albumQuantity_7 < 0)
         {
-            this.quantity = 0;
+            this.albumQuantity_7 = 0;
         }
 
         if (showSubtractedAlbumQuantity_7 != null)
-            showSubtractedAlbumQuantity_7.setText(Integer.toString(this.quantity));
+            showSubtractedAlbumQuantity_7.setText(Integer.toString(this.albumQuantity_7));
+
+        showAlbumSubtotal(this.albumQuantity_7, this.albumPrice_7, this.showAlbumSubtotal_7);
 
     }
+
+
 
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity8(View view)
     {
 
-        this.quantity++;
+        this.albumPrice_8 = findViewById(R.id.album_price_8);
 
-        if (this.quantity < 0)
+        this.albumQuantity_8++;
+
+        if (this.albumQuantity_8 < 0)
         {
-            this.quantity = 0;
+            this.albumQuantity_8 = 0;
         }
 
         if (showAddedAlbumQuantity_8 != null)
-            showAddedAlbumQuantity_8.setText(Integer.toString(this.quantity));
+            showAddedAlbumQuantity_8.setText(Integer.toString(this.albumQuantity_8));
+
+        showAlbumSubtotal(this.albumQuantity_8, this.albumPrice_8, this.showAlbumSubtotal_8);
 
     }
 
@@ -440,31 +498,41 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity8(View view)
     {
 
-        this.quantity--;
+        this.albumPrice_8 = findViewById(R.id.album_price_8);
 
-        if (this.quantity < 0)
+        this.albumQuantity_8--;
+
+        if (this.albumQuantity_8 < 0)
         {
-            this.quantity = 0;
+            this.albumQuantity_8 = 0;
         }
 
         if (showSubtractedAlbumQuantity_8 != null)
-            showSubtractedAlbumQuantity_8.setText(Integer.toString(this.quantity));
+            showSubtractedAlbumQuantity_8.setText(Integer.toString(this.albumQuantity_8));
 
+        showAlbumSubtotal(this.albumQuantity_8, this.albumPrice_8, this.showAlbumSubtotal_8);
     }
+
+
+
 
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity9(View view)
     {
 
-        this.quantity++;
+        this.albumPrice_9 = findViewById(R.id.album_price_9);
 
-        if (this.quantity < 0)
+        this.albumQuantity_9++;
+
+        if (this.albumQuantity_9 < 0)
         {
-            this.quantity = 0;
+            this.albumQuantity_9 = 0;
         }
 
         if (showAddedAlbumQuantity_9 != null)
-            showAddedAlbumQuantity_9.setText(Integer.toString(this.quantity));
+            showAddedAlbumQuantity_9.setText(Integer.toString(this.albumQuantity_9));
+
+        showAlbumSubtotal(this.albumQuantity_9, this.albumPrice_9, this.showAlbumSubtotal_9);
 
     }
 
@@ -474,32 +542,41 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity9(View view)
     {
 
-        this.quantity--;
+        this.albumPrice_9 = findViewById(R.id.album_price_9);
 
-        if (this.quantity < 0)
+        this.albumQuantity_9--;
+
+        if (this.albumQuantity_9 < 0)
         {
-            this.quantity = 0;
+            this.albumQuantity_9 = 0;
         }
 
         if (showSubtractedAlbumQuantity_9 != null)
-            showSubtractedAlbumQuantity_9.setText(Integer.toString(this.quantity));
+            showSubtractedAlbumQuantity_9.setText(Integer.toString(this.albumQuantity_9));
+
+        showAlbumSubtotal(this.albumQuantity_9, this.albumPrice_9, this.showAlbumSubtotal_9);
 
     }
+
+
 
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity10(View view)
     {
 
-        this.albumQuantity++;
+        this.albumPrice_10 = findViewById(R.id.album_price_10);
 
-        if (this.albumQuantity < 0)
+        this.albumQuantity_10++;
+
+        if (this.albumQuantity_10 < 0)
         {
-            this.albumQuantity = 0;
+            this.albumQuantity_10 = 0;
         }
 
         if (showAddedAlbumQuantity_10 != null)
-            showAddedAlbumQuantity_10.setText(Integer.toString(this.albumQuantity));
+            showAddedAlbumQuantity_10.setText(Integer.toString(this.albumQuantity_10));
 
+        showAlbumSubtotal(this.albumQuantity_10, this.albumPrice_10, this.showAlbumSubtotal_10);
     }
 
 
@@ -508,16 +585,19 @@ public class MenuActivity extends AppCompatActivity {
     public void subtractAlbumQuantity10(View view)
     {
 
-        this.albumQuantity--;
+        this.albumPrice_10 = findViewById(R.id.album_price_10);
 
-        if (this.albumQuantity < 0)
+        this.albumQuantity_10--;
+
+        if (this.albumQuantity_10 < 0)
         {
-            this.albumQuantity = 0;
+            this.albumQuantity_10 = 0;
         }
 
         if (showSubtractedAlbumQuantity_10 != null)
-            showSubtractedAlbumQuantity_10.setText(Integer.toString(this.albumQuantity));
+            showSubtractedAlbumQuantity_10.setText(Integer.toString(this.albumQuantity_10));
 
+        showAlbumSubtotal(this.albumQuantity_10, this.albumPrice_10, this.showAlbumSubtotal_10);
     }
 
 
@@ -568,10 +648,14 @@ public class MenuActivity extends AppCompatActivity {
 */
 
 
+    @SuppressLint("DefaultLocale")
     public void launchCheckoutActivity(View view)
     {
         Intent checkoutIntent = new Intent(this, CheckoutActivity.class);
-        checkoutIntent.putExtra(TOTAL_SUBTOTAL, "$" + this.finalSubtotal);
+        checkoutIntent.putExtra(FINAL_SUBTOTAL, String.format("$%.2f", this.finalSubtotal));
+        checkoutIntent.putExtra(TPS_TAX, String.format("$%.2f", this.totalTPSTax));
+        checkoutIntent.putExtra(TVQ_TAX, String.format("$%.2f", this.totalTVQTax));
+        checkoutIntent.putExtra(FINAL_TOTAL, String.format("$%.2f", this.finalTotal));
         startActivityForResult(checkoutIntent, TEXT_REQUEST);
     }
 
