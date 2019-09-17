@@ -19,7 +19,7 @@ public class CheckoutActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
         Intent menuIntent = getIntent();
-        String message = menuIntent.getStringExtra(MenuActivity.EXTRA_MESSAGE);
+        String message = menuIntent.getStringExtra(MenuActivity.TOTAL_SUBTOTAL);
         this.finalSubtotal = findViewById(R.id.subtotal_number);
         this.finalSubtotal.setText(message);
     }
