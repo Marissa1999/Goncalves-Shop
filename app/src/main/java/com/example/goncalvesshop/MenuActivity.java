@@ -603,51 +603,6 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-
-
-
-/*
-    public void modifyAlbumQuantity(View view)
-    {
-
-        String stringAlbumQuantity = albumQuantity.getText().toString();
-        int integerAlbumQuantity = Integer.parseInt(stringAlbumQuantity);
-
-
-        if (view.getId() == addingButton.getId())
-        {
-            integerAlbumQuantity++;
-
-            if (integerAlbumQuantity < 0)
-            {
-                integerAlbumQuantity = 0;
-            }
-
-            showAlbumQuantity(integerAlbumQuantity, albumQuantity);
-            showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal_1);
-        }
-
-        else if (view.getId() == minusButton.getId())
-        {
-            integerAlbumQuantity--;
-
-            if (integerAlbumQuantity < 0)
-            {
-                integerAlbumQuantity = 0;
-            }
-
-            showAlbumQuantity(integerAlbumQuantity, albumQuantity);
-            showAlbumSubtotal(integerAlbumQuantity, albumPrice, albumSubtotal_1);
-        }
-
-    }
-
-
-
-
-*/
-
-
     @SuppressLint("DefaultLocale")
     public void launchCheckoutActivity(View view)
     {
