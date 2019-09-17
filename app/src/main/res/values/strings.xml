@@ -17,13 +17,13 @@
     <string name="album_subtotal_10">$0.00</string>
     <string name="album_price_1">$14.99</string>
     <string name="album_price_2">$12.50</string>
-    <string name="album_price_3">$17.74</string>
+    <string name="album_price_3">$11.74</string>
     <string name="album_price_4">$10.23</string>
     <string name="album_price_5">$9.99</string>
     <string name="album_price_6">$16.38</string>
     <string name="album_price_7">$15.55</string>
     <string name="album_price_8">$11.45</string>
-    <string name="album_price_9">$6.34</string>
+    <string name="album_price_9">$12.34</string>
     <string name="album_price_10">$13.10</string>
     <string name="album_quantity_1">0</string>
     <string name="album_quantity_2">0</string>
@@ -51,7 +51,7 @@
     <string name="album_title_4">Nirvana - Nevermind</string>
     <string name="album_title_5">Van Halen – 1984</string>
     <string name="album_title_6">U2 - Joshua Tree</string>
-    <string name="album_title_7">AC/DC - Back in Black</string>
+    <string name="album_title_7">AC/DC - High Voltage</string>
     <string name="album_title_8">Yes - Fragile</string>
     <string name="album_title_9">R.E.M. - Murmur</string>
     <string name="album_title_10">Pink Floyd - The Wall</string>
@@ -70,7 +70,7 @@
     <string name="album_cover_4">nirvana_nevermind</string>
     <string name="album_cover_5">van_halen_1984</string>
     <string name="album_cover_6">u2_joshua_tree</string>
-    <string name="album_cover_7">ac_dc_back_in_black</string>
+    <string name="album_cover_7">ac_dc_high_voltage</string>
     <string name="album_cover_8">yes_fragile</string>
     <string name="album_cover_9">rem_murmur</string>
     <string name="album_cover_10">pink_floyd_the_wall</string>
