@@ -1,0 +1,20 @@
+# Shopping-Application-Assignment
+
+This shopping Android application allows users to purchase albums and determine the final price total at checkout.
+
+Due to enough time on my hands and my determination to balance my workload efficiently, I successfully was able to complete the project
+in its entirety a few days before September 17, 2019. The documentation is detailed, the design layout for each activity is fantastic
+and the code from all activities work as expected. In general, my shopping application looks very presentable to the eye and users 
+deserve to use it and explore my music collection from my shop. Since I used ten elements as CardViews, I feel quite proud that I was able
+to add more items, than only the bare minimum of three items. I am veryhappy that I was able to complete the majority of this assignment on 
+my own, as I used some hints from my other class colleagues. Generally speaking, I hope the next assignment will be more interesting to 
+create.
+
+However, this project provided more code than expected (especially in the MenuActivity class) since I used methods for every button in
+each CardView. The advanced methods, getParent() and getChildAt(int index), should have been used in order to simplify my code and avoid
+some repetiton. If there was enough time, I certainly would of add the landscape layouts to the application to make it even more
+professional. To display each object at the checkout, I should have created a new Java called ShoppingCart, in order for the entire 
+elements to be transferred at the checkout with all their specific attributes. More details about each product should have been mentioned
+and the design for every CardView element should be a little larger to make more accessible for othe users.
+
+Overall, I am stil very pleased with my final output for this assignment and I wish all the best when it comes to evaluation.
