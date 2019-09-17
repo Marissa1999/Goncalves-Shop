@@ -1,23 +1,17 @@
 package com.example.goncalvesshop;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
-public class CheckoutActivity extends AppCompatActivity
-{
+public class CheckoutActivity extends AppCompatActivity {
 
-    private TextView finalSubtotal;
-    private TextView finalTPSTax;
-    private TextView finalTVQTax;
-    private TextView finalTotal;
-
+    private static final String CHECKOUT_LOG_TAG = CheckoutActivity.class.getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
         Intent menuIntent = getIntent();
@@ -27,17 +21,19 @@ public class CheckoutActivity extends AppCompatActivity
         String finalAlbumTVQTax = menuIntent.getStringExtra(MenuActivity.TVQ_TAX);
         String finalAlbumTotal = menuIntent.getStringExtra(MenuActivity.FINAL_TOTAL);
 
-        this.finalSubtotal = findViewById(R.id.subtotal_number);
-        this.finalSubtotal.setText(finalAlbumSubtotal);
+        TextView finalSubtotal = findViewById(R.id.subtotal_number);
+        finalSubtotal.setText(finalAlbumSubtotal);
 
-        this.finalTPSTax = findViewById(R.id.tps_total_number);
-        this.finalTPSTax.setText(finalAlbumTPSTax);
+        TextView finalTPSTax = findViewById(R.id.tps_total_number);
+        finalTPSTax.setText(finalAlbumTPSTax);
 
-        this.finalTVQTax = findViewById(R.id.tvq_total_number);
-        this.finalTVQTax.setText(finalAlbumTVQTax);
+        TextView finalTVQTax = findViewById(R.id.tvq_total_number);
+        finalTVQTax.setText(finalAlbumTVQTax);
 
-        this.finalTotal = findViewById(R.id.final_total_number);
-        this.finalTotal.setText(finalAlbumTotal);
+        TextView finalTotal = findViewById(R.id.final_total_number);
+        finalTotal.setText(finalAlbumTotal);
+
+        Log.d(CHECKOUT_LOG_TAG, "Started CheckoutActivity and Transferred Values from MenuActivity");
 
     }
 
