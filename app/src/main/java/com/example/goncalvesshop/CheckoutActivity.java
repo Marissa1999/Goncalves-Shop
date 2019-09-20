@@ -11,7 +11,9 @@ public class CheckoutActivity extends AppCompatActivity {
     //The tag to call the CheckoutActivity class name when debugging code
     private static final String CHECKOUT_LOG_TAG = CheckoutActivity.class.getSimpleName();
 
-    //Start the CheckoutActivity class with this auto-implemented method and extract monetary values from the MenuActivity class
+    /*
+    Start the CheckoutActivity class with this auto-implemented method and extract monetary values from the MenuActivity class
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

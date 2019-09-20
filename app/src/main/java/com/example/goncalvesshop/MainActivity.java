@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     public static final int TEXT_REQUEST = 1;
 
 
-    //Start the MainActivity class with this auto-implemented method
+    /*
+    Start the MainActivity class with this auto-implemented method
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d(MAIN_LOG_TAG, "Started MainActivity");
     }
 
-    //Launch the MenuActivity class, which is supposed to be the following activity
+    /*
+    Launch the MenuActivity class, which is supposed to be the following activity
+    */
     public void launchMenuActivity(View view) {
 
         //Create an intent to start the following activity, which is MenuActivity class

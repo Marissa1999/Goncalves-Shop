@@ -90,7 +90,9 @@ public class MenuActivity extends AppCompatActivity {
     private TextView showAlbumSubtotal_10;
 
 
-    //Start the MainActivity with this auto-implemented method and display all values from all ten CardView elements
+    /*
+    Start the MainActivity with this auto-implemented method and display all values from all ten CardView elements
+    */
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +147,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Calculate the chosen album's subtotal from implemented arguments
+    /*
+    Calculate the chosen album's subtotal from implemented arguments
+     */
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void showAlbumSubtotal(int albumQuantity, TextView idAlbumPrice, TextView albumSubtotal) {
 
@@ -177,7 +181,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Calculate the final subtotal instance variable
+    /*
+    Calculate the final subtotal instance variable
+     */
     public void calculateAlbumFinalSubtotal(double albumSubtotal) {
 
         //Determine the final subtotal value by adding the CardView album subtotal to the variable
@@ -188,7 +194,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Calculate the instance variable values for both Canadian taxes
+    /*
+    Calculate the instance variable values for both Canadian taxes
+     */
     public void calculateAlbumFinalTotalTaxes() {
 
         //Determine the final subtotal value by adding the CardView album subtotal to the variable
@@ -200,7 +208,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Calculate the final subtotal instance variable
+    /*
+    Calculate the final subtotal instance variable
+     */
     public void calculateAlbumFinalTotal() {
 
         //Determine the final total value by adding the album subtotal and tax totals together
@@ -211,7 +221,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Modifies the first album's quantity value when the increment button is clicked
+    /*
+    Modifies the first album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity1(View view) {
 
@@ -239,7 +251,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Modifies the first album's quantity value when the decrement button is clicked
+    /*
+    Modifies the first album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity1(View view) {
 
@@ -266,7 +280,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the second album's quantity value when the increment button is clicked
+    /*
+    Modifies the second album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity2(View view) {
 
@@ -293,7 +309,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the second album's quantity value when the decrement button is clicked
+    /*
+    Modifies the second album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity2(View view) {
 
@@ -320,7 +338,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the third album's quantity value when the increment button is clicked
+    /*
+    Modifies the third album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity3(View view) {
 
@@ -347,7 +367,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the third album's quantity value when the decrement button is clicked
+    /*
+    Modifies the third album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity3(View view) {
 
@@ -402,7 +424,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    //Modifies the fourth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the fourth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity4(View view) {
 
@@ -429,7 +453,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the fifth album's quantity value when the increment button is clicked
+    /*
+    Modifies the fifth album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity5(View view) {
 
@@ -456,7 +482,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the fifth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the fifth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity5(View view) {
 
@@ -483,7 +511,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the sixth album's quantity value when the increment button is clicked
+    /*
+    Modifies the sixth album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity6(View view) {
 
@@ -510,7 +540,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the sixth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the sixth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity6(View view) {
 
@@ -537,7 +569,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the seventh album's quantity value when the increment button is clicked
+    /*
+    Modifies the seventh album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity7(View view) {
 
@@ -564,7 +598,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the seventh album's quantity value when the decrement button is clicked
+    /*
+    Modifies the seventh album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity7(View view) {
 
@@ -591,7 +627,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the eighth album's quantity value when the increment button is clicked
+    /*
+    Modifies the eighth album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity8(View view) {
 
@@ -618,7 +656,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the eighth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the eighth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity8(View view) {
 
@@ -645,7 +685,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the ninth album's quantity value when the increment button is clicked
+    /*
+    Modifies the ninth album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity9(View view) {
 
@@ -672,7 +714,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the ninth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the ninth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity9(View view) {
 
@@ -699,7 +743,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    //Modifies the tenth album's quantity value when the increment button is clicked
+    /*
+    Modifies the tenth album's quantity value when the increment button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void addAlbumQuantity10(View view) {
 
@@ -725,7 +771,9 @@ public class MenuActivity extends AppCompatActivity {
         showAlbumSubtotal(this.albumQuantity_10, this.albumPrice_10, this.showAlbumSubtotal_10);
     }
 
-    //Modifies the tenth album's quantity value when the decrement button is clicked
+    /*
+    Modifies the tenth album's quantity value when the decrement button is clicked
+     */
     @SuppressLint("SetTextI18n")
     public void subtractAlbumQuantity10(View view) {
 
@@ -751,7 +799,9 @@ public class MenuActivity extends AppCompatActivity {
         showAlbumSubtotal(this.albumQuantity_10, this.albumPrice_10, this.showAlbumSubtotal_10);
     }
 
-    //Launch the CheckoutActivity class, which is supposed to be the following activity
+    /*
+    Launch the CheckoutActivity class, which is supposed to be the following activity
+     */
     @SuppressLint("DefaultLocale")
     public void launchCheckoutActivity(View view) {
 
