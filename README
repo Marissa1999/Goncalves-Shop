@@ -1,3 +1,5 @@
+#Name
+
 # GoncalvesShop
 
 This shopping Android application allows users to purchase albums and determine the final price total at checkout.
@@ -18,3 +20,5 @@ elements to be transferred at the checkout with all their specific attributes. M
 and the design for every CardView element should be a little larger to make more accessible for othe users.
 
 Overall, I am stil very pleased with my final output for this assignment and I wish all the best when it comes to evaluation.
+
+## Licence
