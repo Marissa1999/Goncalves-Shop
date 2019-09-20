@@ -7,8 +7,8 @@ Due to enough time on my hands and my determination to balance my workload effic
 in its entirety a few days before September 17, 2019. The documentation is detailed, the design layout for each activity is fantastic
 and the code from all activities work as expected. In general, my shopping application looks very presentable to the eye and users 
 deserve to use it and explore my music collection from my shop. Since I used ten elements as CardViews, I feel quite proud that I was able
-to add more items, than the bare minimum of three items. I am very happy that I was able to complete the majority of this assignment 
-on my own, as I used some hints from my other class colleagues. Generally speaking, I hope the next assignment will be more interesting to 
+to add more items, than the bare minimum of three items. I am very happy that I was able to complete all of this assignment 
+on my own. Generally speaking, I hope the next assignment will be more interesting to 
 create.
 
 However, this project provided more code than expected (especially in the MenuActivity class) since I used methods for every button in
