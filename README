@@ -1,6 +1,7 @@
 # GoncalvesShop
 
 This shopping Android application allows users to purchase albums and determine the final price total at checkout.
+Note: Please run this application using the Nexus 5X API 28 x86 (G Play Services) emulator. Thank you.
 
 Due to enough time on my hands and my determination to balance my workload efficiently, I successfully was able to complete the project
 in its entirety a few days before September 17, 2019. The documentation is detailed, the design layout for each activity is fantastic
