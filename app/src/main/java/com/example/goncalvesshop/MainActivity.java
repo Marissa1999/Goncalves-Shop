@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     //The tag to call the MainActivity class name when debugging code
     private static final String MAIN_LOG_TAG = MainActivity.class.getSimpleName();
 
-
     /*
     Start the MainActivity class with this auto-implemented method
     */

@@ -20,9 +20,6 @@ public class MenuActivity extends AppCompatActivity {
     public static final String TVQ_TAX = "com.example.android.goncalvesshop.tvq.TAX";
     public static final String FINAL_TOTAL = "com.example.android.goncalvesshop.final.TOTAL";
 
-    //The tag to send a request to the CheckoutActivity class when it is launched
-    public static final int TEXT_REQUEST = 1;
-
     //These Double instance variables hold values for final purchase totals
     private double finalSubtotal = 0.00;
     private double totalTPSTax = 0.00;
@@ -815,7 +812,7 @@ public class MenuActivity extends AppCompatActivity {
         checkoutIntent.putExtra(FINAL_TOTAL, String.format("$%.2f", this.finalTotal));
 
         //Start the CheckoutActivity class and send a text request at the same time
-        startActivityForResult(checkoutIntent, TEXT_REQUEST);
+        startActivity(checkoutIntent);
 
         //Print a log message to ensure launchCheckoutActivity method's functionality
         Log.d(MENU_LOG_TAG, "Transferred Subtotal, Tax Values and Final Total to CheckoutActivity with Clicked Button");
