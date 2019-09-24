@@ -11,9 +11,6 @@ public class MainActivity extends AppCompatActivity {
     //The tag to call the MainActivity class name when debugging code
     private static final String MAIN_LOG_TAG = MainActivity.class.getSimpleName();
 
-    //The tag to send a request to the MenuActivity class when it is launched
-    public static final int TEXT_REQUEST = 1;
-
 
     /*
     Start the MainActivity class with this auto-implemented method
@@ -37,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         //Create an intent to start the following activity, which is MenuActivity class
         Intent menuIntent = new Intent(this, MenuActivity.class);
 
-        //Start the MenuActivity class and send a text request at the same time
-        startActivityForResult(menuIntent, TEXT_REQUEST);
+        //Start the MenuActivity class
+        startActivity(menuIntent);
 
         //Print a log message to ensure launchMenuActivity method's functionality
         Log.d(MAIN_LOG_TAG, "Launched the MenuActivity with Clicked Button");
