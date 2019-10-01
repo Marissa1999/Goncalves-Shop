@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Start the MenuActivity class
         startActivity(menuIntent);
+
+        String launchingMainMessage = "Button clicked!";
+        Toast toastMainMessage = Toast.makeText(this, launchingMainMessage, Toast.LENGTH_SHORT);
+        toastMainMessage.show();
 
         //Print a log message to ensure launchMenuActivity method's functionality
         Log.d(MAIN_LOG_TAG, "Launched the MenuActivity with Clicked Button");

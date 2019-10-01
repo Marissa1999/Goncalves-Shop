@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -813,6 +814,10 @@ public class MenuActivity extends AppCompatActivity {
 
         //Start the CheckoutActivity class and send a text request at the same time
         startActivity(checkoutIntent);
+
+        String launchingMenuMessage = "Button clicked!";
+        Toast toastMenuMessage = Toast.makeText(this, launchingMenuMessage, Toast.LENGTH_SHORT);
+        toastMenuMessage.show();
 
         //Print a log message to ensure launchCheckoutActivity method's functionality
         Log.d(MENU_LOG_TAG, "Transferred Subtotal, Tax Values and Final Total to CheckoutActivity with Clicked Button");
